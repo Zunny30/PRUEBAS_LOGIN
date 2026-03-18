@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Registrar Ausencia o Incapacidad";
+}
+
+<h2>Registrar Ausencia / Incapacidad</h2>
+
+<form asp-action="Create" method="post">
+
+    <div class="form-group">
+        <label>Tipo de Solicitud</label><br />
+
+        <input type="radio" id="Ausencia" name="Tipo" value="Ausencia" required />
+        <label for="Ausencia">Ausencia</label>
+
+        &nbsp;&nbsp;&nbsp;
+
+        <input type="radio" id="Incapacidad" name="Tipo" value="Incapacidad" />
+        <label for="Incapacidad">Incapacidad</label>
+    </div>
+
+    <br />
+
+    <div class="form-group">
+        <label for="Asunto">Asunto</label>
+        <input type="text" class="form-control" id="Asunto" name="Asunto" required />
+    </div>
+
+    <br />
+
+    <div class="form-group">
+        <label for="FechaInicio">Fecha de Inicio</label>
+        <input type="date" class="form-control" id="FechaInicio" name="FechaInicio" required />
+    </div>
+
+    <br />
+
+    <div class="form-group">
+        <label for="FechaFin">Fecha Final</label>
+        <input type="date" class="form-control" id="FechaFin" name="FechaFin" required />
+    </div>
+
+    <br />
+
+    <button type="submit" class="btn btn-primary">
+        Registrar
+    </button>
+
+</form>

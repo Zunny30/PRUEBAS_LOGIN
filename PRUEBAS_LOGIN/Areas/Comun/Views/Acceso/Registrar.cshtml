@@ -1,0 +1,62 @@
+﻿
+@model PRUEBAS_LOGIN.Areas.Comun.Models.Usuario
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Registrar</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="text-center">Registro de Usuario</h3>
+                    </div>
+                    <div class="card-body">
+                        <form id="registroForm" method="post" action="@Url.Action("Registrar", "Acceso")">
+                            <div class="form-group">
+                                <label for="Correo">Correo Electrónico</label>
+                                <input type="email" id="Correo" name="Correo" class="form-control" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="Clave">Contraseña</label>
+                                <input type="password" id="Clave" name="Clave" class="form-control" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="ConfirmarClave">Confirmar Contraseña</label>
+                                <input type="password" id="ConfirmarClave" class="form-control" required />
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Registrar</button>
+                        </form>
+                        @if (ViewData["Mensaje"] != null)
+                        {
+                            <div class="alert alert-danger mt-3">
+                                @ViewData["Mensaje"]
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('registroForm').addEventListener('submit', function(e) {
+            var clave = document.getElementById('Clave').value;
+            var confirmar = document.getElementById('ConfirmarClave').value;
+            if (clave !== confirmar) {
+                e.preventDefault();
+                alert('Las contraseñas no coinciden');
+            }
+        });
+    </script>
+</body>
+</html>

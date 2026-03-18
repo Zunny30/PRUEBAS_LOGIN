@@ -1,0 +1,51 @@
+@model PRUEBAS_LOGIN.Areas.Profesor.Models.Ausencia
+
+@{
+    ViewBag.Title = "Registrar Ausencia o Incapacidad";
+}
+
+<h2>Registrar Ausencia / Incapacidad</h2>
+
+@using (Html.BeginForm("Crear", "Ausencias", FormMethod.Post))
+{
+    @Html.ValidationSummary(true, "Por favor corrija los errores.", new { @class = "text-danger" })
+
+    <div class="form-group">
+        <label>Tipo de Solicitud</label><br />
+        @Html.RadioButtonFor(m => m.Tipo, "Ausencia", new { required = "required" }) <label for="Tipo">Ausencia</label>
+        &nbsp;&nbsp;&nbsp;
+        @Html.RadioButtonFor(m => m.Tipo, "Incapacidad") <label for="Tipo">Incapacidad</label>
+    </div>
+
+    <br />
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Asunto)
+        @Html.TextBoxFor(m => m.Asunto, new { @class = "form-control", required = "required" })
+    </div>
+
+    <br />
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.FechaInicio, "Fecha de Inicio")
+        @Html.TextBoxFor(m => m.FechaInicio, "", new { @class = "form-control", type = "date", required = "required" })
+    </div>
+
+    <br />
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.FechaFin, "Fecha Final")
+        @Html.TextBoxFor(m => m.FechaFin, "", new { @class = "form-control", type = "date", required = "required" })
+    </div>
+
+    <br />
+
+    <button type="submit" class="btn btn-primary">
+        Registrar
+    </button>
+}
+
+@if (ViewBag.Mensaje != null)
+{
+    <div class="alert alert-info">@ViewBag.Mensaje</div>
+}

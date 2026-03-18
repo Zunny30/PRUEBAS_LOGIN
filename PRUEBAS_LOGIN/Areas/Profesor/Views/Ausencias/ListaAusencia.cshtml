@@ -1,0 +1,74 @@
+﻿@model IEnumerable<PRUEBAS_LOGIN.Areas.Profesor.Models.Ausencia>
+    @using System.Linq
+
+    @{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+    <!DOCTYPE html>
+
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Lista De Ausencias</title>
+    </head>
+    <body>
+        <p>
+            @Html.ActionLink("Crear Nueva", "Crear")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.IdAusencia)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Tipo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Asunto)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FechaInicio)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FechaFin)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IdUsuario)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model ?? Enumerable.Empty
+            <PRUEBAS_LOGIN.Models.Ausencia>
+                ()) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IdAusencia)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Tipo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Asunto)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FechaInicio)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FechaFin)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IdUsuario)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    </td>
+                </tr>
+                }
+
+        </table>
+    </body>
+</html>
