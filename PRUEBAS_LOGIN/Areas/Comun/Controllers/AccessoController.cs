@@ -94,7 +94,7 @@ namespace PRUEBAS_LOGIN.Areas.Comun.Controllers
                     // Crear sesión
                     Session["usuario"] = usuarioEncontrado;
                     Session["IdUsuario"] = usuarioEncontrado.IdUsuario;
-                    return RedirectToAction("Index", "Home", new { area = "Comun" }); // ← AQUÍ
+                    return RedirectToAction("Index", "Home", new { area = "Comun" });
                 }
                 else
                 {

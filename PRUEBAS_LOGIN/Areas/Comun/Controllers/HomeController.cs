@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 
 
-namespace PRUEBAS_LOGIN.Controllers
+namespace PRUEBAS_LOGIN.Areas.Comun.Controllers
 {
     [ValidarSesion]
 
@@ -38,7 +38,7 @@ namespace PRUEBAS_LOGIN.Controllers
         public ActionResult CerrarSesion()
         {
             Session["usuario"] = null;
-            return RedirectToAction("Login", "Acceso");
+            return RedirectToAction("Login", "Acceso", new { area = "Comun" });
 
         }
     }

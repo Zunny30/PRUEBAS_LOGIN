@@ -211,9 +211,7 @@
     <Content Include="Areas\Comun\Views\Home\Index.cshtml" />
     <Content Include="Areas\Comun\Views\Acceso\Login.cshtml" />
     <Content Include="Areas\Comun\Views\Acceso\Registrar.cshtml" />
-    <Content Include="Areas\Comun\Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\Comun\Views\Shared\Error.cshtml" />
-    <Content Include="Areas\Comun\Views\Shared\_ViewStart.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
     <None Include="packages\jQuery.3.7.0\Content\Scripts\jquery-3.7.0-vsdoc.js" />
     <Content Include="packages\jQuery.3.7.0\Content\Scripts\jquery-3.7.0.js" />
     <Content Include="packages\jQuery.3.7.0\Content\Scripts\jquery-3.7.0.min.js" />
@@ -514,6 +512,9 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\web.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
