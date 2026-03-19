@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 
 
-namespace PRUEBAS_LOGIN.Areas.Comun.Controllers
+namespace PRUEBAS_LOGIN.Areas.Profesor.Controllers
 {
     [ValidarSesion]
 

@@ -126,7 +126,7 @@
     <Compile Include="Areas\Profesor\Models\Ausencia.cs" />
     <Compile Include="Areas\Profesor\ProfesorAreaRegistration.cs" />
     <Compile Include="Areas\Comun\Controllers\AccessoController.cs" />
-    <Compile Include="Areas\Comun\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Profesor\Controllers\HomeController.cs" />
     <Compile Include="Areas\Comun\Data\DB.cs" />
     <Compile Include="Filters\SesionActivaAttribute.cs" />
     <Compile Include="Global.asax.cs">
@@ -208,10 +208,10 @@
     <Content Include="Areas\Profesor\Views\Ausencias\ListaAusencia.cshtml" />
     <Content Include="Areas\Comun\Views\Home\About.cshtml" />
     <Content Include="Areas\Comun\Views\Home\Contact.cshtml" />
-    <Content Include="Areas\Comun\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Profesor\Views\Home\Index.cshtml" />
     <Content Include="Areas\Comun\Views\Acceso\Login.cshtml" />
     <Content Include="Areas\Comun\Views\Acceso\Registrar.cshtml" />
-    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Profesor\Views\_ViewStart.cshtml" />
     <None Include="packages\jQuery.3.7.0\Content\Scripts\jquery-3.7.0-vsdoc.js" />
     <Content Include="packages\jQuery.3.7.0\Content\Scripts\jquery-3.7.0.js" />
     <Content Include="packages\jQuery.3.7.0\Content\Scripts\jquery-3.7.0.min.js" />
@@ -512,8 +512,8 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Areas\Profesor\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Profesor\Views\Shared\Error.cshtml" />
     <Content Include="Views\web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -522,7 +522,6 @@
     <Folder Include="Areas\Director\Data\" />
     <Folder Include="Areas\Director\Views\Shared\" />
     <Folder Include="Areas\Profesor\Data\" />
-    <Folder Include="Areas\Profesor\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
