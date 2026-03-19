@@ -4,13 +4,7 @@ namespace PRUEBAS_LOGIN.Areas.Comun
 {
     public class ComunAreaRegistration : AreaRegistration
     {
-        public override string AreaName
-        {
-            get
-            {
-                return "Comun";
-            }
-        }
+        public override string AreaName => "Comun";
 
         public override void RegisterArea(AreaRegistrationContext context)
         {
@@ -19,7 +13,7 @@ namespace PRUEBAS_LOGIN.Areas.Comun
                 "Comun/{controller}/{action}/{id}",
                 new
                 {
-                    controller = "Acceso", // 👈 AGREGAR ESTO
+                    controller = "Acceso",      // ← AGREGA ESTO
                     action = "Login",
                     id = UrlParameter.Optional
                 }

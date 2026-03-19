@@ -1,4 +1,5 @@
 ﻿
+using PRUEBAS_LOGIN.Filters;
 using PRUEBAS_LOGIN.Permisos;
 using System;
 using System.Collections.Generic;
@@ -12,12 +13,14 @@ namespace PRUEBAS_LOGIN.Controllers
 {
     [ValidarSesion]
 
+    [SesionActiva]  // ← protege todo el controlador
     public class HomeController : Controller
     {
         public ActionResult Index()
         {
             return View();
         }
+    
 
         public ActionResult About()
         {

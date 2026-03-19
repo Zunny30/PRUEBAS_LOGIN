@@ -13,15 +13,14 @@ using System.Web.Mvc;
 
 namespace PRUEBAS_LOGIN.Areas.Comun.Controllers
 {
+
     public class AccesoController : Controller
     {
-        private static string CadenaConexion =>
-            WebConfigurationManager.ConnectionStrings["DB_ACCESO"].ConnectionString;
-
         public ActionResult Login()
         {
             return View();
         }
+
 
         public ActionResult Registrar()
         {
@@ -57,7 +56,7 @@ namespace PRUEBAS_LOGIN.Areas.Comun.Controllers
                 if (idUsuario > 0)
                 {
                     TempData["Mensaje"] = "Usuario registrado exitosamente";
-                    return RedirectToAction("Login", "Acceso");
+                    return RedirectToAction("Login", "Acceso", new { area = "Comun" });
                 }
                 else
                 {
@@ -95,7 +94,7 @@ namespace PRUEBAS_LOGIN.Areas.Comun.Controllers
                     // Crear sesión
                     Session["usuario"] = usuarioEncontrado;
                     Session["IdUsuario"] = usuarioEncontrado.IdUsuario;
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Home", new { area = "Comun" }); // ← AQUÍ
                 }
                 else
                 {
